@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXFileReference section */
+		B7143E04148EB9140006FBAF /* testComparePrediction.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testComparePrediction.sci; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.c; };
+		B75656EE1488E88F007C7B89 /* tesCorrectionErreurSin.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tesCorrectionErreurSin.sce; sourceTree = "<group>"; };
+		B75656EF1488E88F007C7B89 /* testCorrectionSway1D.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testCorrectionSway1D.sce; sourceTree = "<group>"; };
+		B75656F01488E88F007C7B89 /* testCorrectionSway1D_iros2011.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testCorrectionSway1D_iros2011.sce; sourceTree = "<group>"; };
+		B75656F11488E88F007C7B89 /* testCorrectionSway1D_iros2011_period.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testCorrectionSway1D_iros2011_period.sce; sourceTree = "<group>"; };
+		B75656F21488E88F007C7B89 /* testCorrectionSway1D_sinDoubleCorrector.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testCorrectionSway1D_sinDoubleCorrector.sce; sourceTree = "<group>"; };
+		B75656F31488E88F007C7B89 /* testCorrectionSwayDoubleIntegrateur.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testCorrectionSwayDoubleIntegrateur.sce; sourceTree = "<group>"; };
+		B75656F41488E88F007C7B89 /* testInt.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testInt.sce; sourceTree = "<group>"; };
+		B75656F51488E88F007C7B89 /* testIntEstimate.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testIntEstimate.sce; sourceTree = "<group>"; };
+		B75656F71488E88F007C7B89 /* makeFigCameraFrame.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = makeFigCameraFrame.sce; sourceTree = "<group>"; };
+		B75656F91488E88F007C7B89 /* testPredControl.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testPredControl.sci; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.c; };
+		B75656FA1488E88F007C7B89 /* testPrediction.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testPrediction.sce; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.c; };
+		B75656FB1488E88F007C7B89 /* testRectification.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testRectification.sce; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.c; };
+		B75656FD1488E88F007C7B89 /* testAVJerk.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testAVJerk.sce; sourceTree = "<group>"; };
+		B75656FE1488E88F007C7B89 /* testQPVisu.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testQPVisu.sce; sourceTree = "<group>"; };
+		B75656FF1488E88F007C7B89 /* testQPVisuJerkCam.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testQPVisuJerkCam.sce; sourceTree = "<group>"; };
+		B75657001488E88F007C7B89 /* testQPVisuJerkCam2.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testQPVisuJerkCam2.sce; sourceTree = "<group>"; };
+		B75657011488E88F007C7B89 /* saturation.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = saturation.sce; sourceTree = "<group>"; };
+		B75657021488E88F007C7B89 /* testAsserVisuPredictif_ga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testAsserVisuPredictif_ga.cpp; sourceTree = "<group>"; };
+		B75657031488E88F007C7B89 /* testAsserVisuPredictif_ga.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testAsserVisuPredictif_ga.sce; sourceTree = "<group>"; };
+		B75657051488E88F007C7B89 /* testLimitcMo.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testLimitcMo.sce; sourceTree = "<group>"; };
+		B75657061488E88F007C7B89 /* testTransformation.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testTransformation.sce; sourceTree = "<group>"; };
+		B75657081488E88F007C7B89 /* testAsserVisu_base.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testAsserVisu_base.sce; sourceTree = "<group>"; };
+		B75657091488E88F007C7B89 /* testAsserVisuEpsilon.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testAsserVisuEpsilon.sce; sourceTree = "<group>"; };
+		B756570A1488E88F007C7B89 /* testAsserVisuEpsilon_bruit.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testAsserVisuEpsilon_bruit.sce; sourceTree = "<group>"; };
+		B756570B1488E88F007C7B89 /* testAsserVisuEpsilon_sans.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testAsserVisuEpsilon_sans.sce; sourceTree = "<group>"; };
+		B756570C1488E88F007C7B89 /* testAsserVisuFuns.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testAsserVisuFuns.sci; sourceTree = "<group>"; };
+		B756570D1488E88F007C7B89 /* testAsserVisuMain.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testAsserVisuMain.sce; sourceTree = "<group>"; };
+		B756570E1488E88F007C7B89 /* testAsserVisuTous.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testAsserVisuTous.sce; sourceTree = "<group>"; };
+		B756570F1488E88F007C7B89 /* testLimitVelocity.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testLimitVelocity.sce; sourceTree = "<group>"; };
+		B75657111488E88F007C7B89 /* testAsserVisuEpsilon_bruit._GAsce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testAsserVisuEpsilon_bruit._GAsce; sourceTree = "<group>"; };
+		B75657121488E88F007C7B89 /* testAsserVisuEpsilon_bruit_GA.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testAsserVisuEpsilon_bruit_GA.sce; sourceTree = "<group>"; };
+		B75657131488E88F007C7B89 /* testAsserVisuEpsilon_SurX.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testAsserVisuEpsilon_SurX.sce; sourceTree = "<group>"; };
+		B75657141488E88F007C7B89 /* testAV3DSwayCorr2Tasks.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testAV3DSwayCorr2Tasks.sci; sourceTree = "<group>"; };
+		B75657151488E88F007C7B89 /* testAV3DSwayCorrection.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testAV3DSwayCorrection.sci; sourceTree = "<group>"; };
+		B75657161488E88F007C7B89 /* testAVrobotErreur.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testAVrobotErreur.sce; sourceTree = "<group>"; };
+		B75657171488E88F007C7B89 /* testIROS2010.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testIROS2010.sce; sourceTree = "<group>"; };
+		B75657181488E88F007C7B89 /* testLinearAsserVisuMarche.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testLinearAsserVisuMarche.sce; sourceTree = "<group>"; };
+		B75657191488E88F007C7B89 /* testPG.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testPG.sci; sourceTree = "<group>"; };
+		B756571A1488E88F007C7B89 /* testPGCam.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testPGCam.sci; sourceTree = "<group>"; };
+		B756571B1488E88F007C7B89 /* testSwayCorrection.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testSwayCorrection.sce; sourceTree = "<group>"; };
+		B756571C1488E88F007C7B89 /* testSwayCorrection.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testSwayCorrection.sci; sourceTree = "<group>"; };
+		B756571D1488E88F007C7B89 /* testSwayCorrection3ddl.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testSwayCorrection3ddl.sci; sourceTree = "<group>"; };
+		B756571E1488E88F007C7B89 /* testSwayCorrectionAll.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testSwayCorrectionAll.sce; sourceTree = "<group>"; };
+		B756571F1488E88F007C7B89 /* testSwayCorrectionHRP2.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testSwayCorrectionHRP2.sce; sourceTree = "<group>"; };
+		B75657201488E88F007C7B89 /* testSwayCorrectionHRP2.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testSwayCorrectionHRP2.sci; sourceTree = "<group>"; };
+		B75657211488E88F007C7B89 /* testSwaySimuRobot.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testSwaySimuRobot.sci; sourceTree = "<group>"; };
+		B75657221488E88F007C7B89 /* main.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.sce; path = ../main.sce; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.c; };
+		B75657241488E88F007C7B89 /* testFeatureJerk.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testFeatureJerk.sce; sourceTree = "<group>"; };
+		B75657251488E88F007C7B89 /* testPositionCamRobot.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testPositionCamRobot.sce; sourceTree = "<group>"; };
+		B75657261488E88F007C7B89 /* testProjection.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testProjection.sce; sourceTree = "<group>"; };
+		B75657271488E88F007C7B89 /* testStateJerk.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testStateJerk.sce; sourceTree = "<group>"; };
+		B75657281488E88F007C7B89 /* unitTestAsserVisu.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = unitTestAsserVisu.sce; sourceTree = "<group>"; };
+		B756572B1488E88F007C7B89 /* asserVisuLoop */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = asserVisuLoop; sourceTree = "<group>"; };
+		B756572C1488E88F007C7B89 /* asserVisuLoop.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = asserVisuLoop.sci; sourceTree = "<group>"; };
+		B756572D1488E88F007C7B89 /* commandLaws.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = commandLaws.sci; sourceTree = "<group>"; };
+		B756572E1488E88F007C7B89 /* interactionMatrix.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = interactionMatrix.sci; sourceTree = "<group>"; };
+		B756572F1488E88F007C7B89 /* velocitySaturation.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = velocitySaturation.sci; sourceTree = "<group>"; };
+		B75657311488E88F007C7B89 /* predComputeQPvisu.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = predComputeQPvisu.sci; sourceTree = "<group>"; };
+		B75657321488E88F007C7B89 /* predConfig.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = predConfig.sci; sourceTree = "<group>"; };
+		B75657331488E88F007C7B89 /* predConstraintsMire.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = predConstraintsMire.sci; sourceTree = "<group>"; };
+		B75657341488E88F007C7B89 /* predControl.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = predControl.sci; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.c; };
+		B75657351488E88F007C7B89 /* predCostMire.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = predCostMire.sci; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.c; };
+		B75657361488E88F007C7B89 /* predMatrix.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = predMatrix.sci; sourceTree = "<group>"; };
+		B75657371488E88F007C7B89 /* predPredictionMire.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = predPredictionMire.sci; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.c; };
+		B75657381488E88F007C7B89 /* predPredictionPoint.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = predPredictionPoint.sci; sourceTree = "<group>"; };
+		B756573A1488E88F007C7B89 /* AxeZ2DDraw.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AxeZ2DDraw.sci; sourceTree = "<group>"; };
+		B756573B1488E88F007C7B89 /* AxeZ3DDraw.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AxeZ3DDraw.sci; sourceTree = "<group>"; };
+		B756573C1488E88F007C7B89 /* Camera3D.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Camera3D.sci; sourceTree = "<group>"; };
+		B756573D1488E88F007C7B89 /* Camera3DDraw.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Camera3DDraw.sci; sourceTree = "<group>"; };
+		B756573E1488E88F007C7B89 /* createFigure.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = createFigure.sci; sourceTree = "<group>"; };
+		B756573F1488E88F007C7B89 /* Mire3DDraw.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Mire3DDraw.sci; sourceTree = "<group>"; };
+		B75657401488E88F007C7B89 /* PlotFeet.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PlotFeet.sci; sourceTree = "<group>"; };
+		B75657411488E88F007C7B89 /* point2DDraw.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = point2DDraw.sci; sourceTree = "<group>"; };
+		B75657421488E88F007C7B89 /* point3DDraw.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = point3DDraw.sci; sourceTree = "<group>"; };
+		B75657441488E88F007C7B89 /* convertVelocity.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = convertVelocity.sci; sourceTree = "<group>"; };
+		B75657451488E88F007C7B89 /* loadHRP2camCom.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = loadHRP2camCom.sci; sourceTree = "<group>"; };
+		B75657471488E88F007C7B89 /* mire4points.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mire4points.sci; sourceTree = "<group>"; };
+		B75657481488E88F007C7B89 /* mire5points.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mire5points.sci; sourceTree = "<group>"; };
+		B75657491488E88F007C7B89 /* mirePoints.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mirePoints.sci; sourceTree = "<group>"; };
+		B756574A1488E88F007C7B89 /* projection3dPoint.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = projection3dPoint.sci; sourceTree = "<group>"; };
+		B756574B1488E88F007C7B89 /* wMcFromProjMatr.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wMcFromProjMatr.sci; sourceTree = "<group>"; };
+		B756574D1488E88F007C7B89 /* ConstraintsAsLinearSystem.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConstraintsAsLinearSystem.sci; sourceTree = "<group>"; };
+		B756574E1488E88F007C7B89 /* LoadMarche.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LoadMarche.sci; sourceTree = "<group>"; };
+		B756574F1488E88F007C7B89 /* previewOrientations.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = previewOrientations.sci; sourceTree = "<group>"; };
+		B75657501488E88F007C7B89 /* prwControl.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prwControl.sci; sourceTree = "<group>"; };
+		B75657511488E88F007C7B89 /* prwControlInit.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prwControlInit.sci; sourceTree = "<group>"; };
+		B75657521488E88F007C7B89 /* setSupportState.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = setSupportState.sci; sourceTree = "<group>"; };
+		B75657531488E88F007C7B89 /* testPGCam.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testPGCam.sci; sourceTree = "<group>"; };
+		B75657551488E88F007C7B89 /* matrixTool.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = matrixTool.sci; sourceTree = "<group>"; };
+		B75657571488E88F007C7B89 /* changementDeRepere.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = changementDeRepere.sci; sourceTree = "<group>"; };
+		B75657581488E88F007C7B89 /* computeMotionCam.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = computeMotionCam.sci; sourceTree = "<group>"; };
+		B75657591488E88F007C7B89 /* computeMotionCoM.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = computeMotionCoM.sci; sourceTree = "<group>"; };
+		B756575A1488E88F007C7B89 /* expMapDirectRxRyRz.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = expMapDirectRxRyRz.sci; sourceTree = "<group>"; };
+		B756575B1488E88F007C7B89 /* expMapDirectThetaU.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = expMapDirectThetaU.sci; sourceTree = "<group>"; };
+		B756575C1488E88F007C7B89 /* homogeneousMatrix.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = homogeneousMatrix.sci; sourceTree = "<group>"; };
+		B756575D1488E88F007C7B89 /* homogeneousMatrixFromPose.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = homogeneousMatrixFromPose.sci; sourceTree = "<group>"; };
+		B756575E1488E88F007C7B89 /* pFromHomogeneousMatrix.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pFromHomogeneousMatrix.sci; sourceTree = "<group>"; };
+		B756575F1488E88F007C7B89 /* rotationMatrixFromRxRyRz.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rotationMatrixFromRxRyRz.sci; sourceTree = "<group>"; };
+		B75657601488E88F007C7B89 /* rotationMatrixFromThetaU.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rotationMatrixFromThetaU.sci; sourceTree = "<group>"; };
+		B75657611488E88F007C7B89 /* RxRyRzfromRotationMatrix.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RxRyRzfromRotationMatrix.sci; sourceTree = "<group>"; };
+		B75657621488E88F007C7B89 /* RxRyRzFromThetaU.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RxRyRzFromThetaU.sci; sourceTree = "<group>"; };
+		B75657631488E88F007C7B89 /* skew.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = skew.sci; sourceTree = "<group>"; };
+		B75657641488E88F007C7B89 /* thetaUFromRotationMatrix.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thetaUFromRotationMatrix.sci; sourceTree = "<group>"; };
+		B75657651488E88F007C7B89 /* thetaUFromRxRyRz.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thetaUFromRxRyRz.sci; sourceTree = "<group>"; };
+		B75657661488E88F007C7B89 /* twistMatrix.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = twistMatrix.sci; sourceTree = "<group>"; };
+		B75657671488E88F007C7B89 /* vRxRyRzFromVThetaU.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vRxRyRzFromVThetaU.sci; sourceTree = "<group>"; };
+		B75657681488E88F007C7B89 /* vThetaUFromVRxRyRz.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vThetaUFromVRxRyRz.sci; sourceTree = "<group>"; };
+		B75657691488E88F007C7B89 /* LoadMarche.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LoadMarche.sce; path = ../LoadMarche.sce; sourceTree = SOURCE_ROOT; };
+		B756576A1488E88F007C7B89 /* Load.sce */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Load.sce; path = ../Load.sce; sourceTree = SOURCE_ROOT; };
+		B756576D1488E8B7007C7B89 /* testCostFunction.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testCostFunction.sci; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.c; };
+		B7A5BEC3149660C50040BBEA /* testOneLoop.sci */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testOneLoop.sci; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.c; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		B75656EC1488E88F007C7B89 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				B75656ED1488E88F007C7B89 /* correctionSway1D */,
+				B75656F61488E88F007C7B89 /* makeFig */,
+				B75656F81488E88F007C7B89 /* predControl */,
+				B75656FC1488E88F007C7B89 /* qp */,
+				B75657011488E88F007C7B89 /* saturation.sce */,
+				B75657021488E88F007C7B89 /* testAsserVisuPredictif_ga.cpp */,
+				B75657031488E88F007C7B89 /* testAsserVisuPredictif_ga.sce */,
+				B75657041488E88F007C7B89 /* transform */,
+				B75657071488E88F007C7B89 /* vs */,
+				B75657101488E88F007C7B89 /* vsWalk */,
+			);
+			name = main;
+			path = ../main;
+			sourceTree = SOURCE_ROOT;
+		};
+		B75656ED1488E88F007C7B89 /* correctionSway1D */ = {
+			isa = PBXGroup;
+			children = (
+				B75656EE1488E88F007C7B89 /* tesCorrectionErreurSin.sce */,
+				B75656EF1488E88F007C7B89 /* testCorrectionSway1D.sce */,
+				B75656F01488E88F007C7B89 /* testCorrectionSway1D_iros2011.sce */,
+				B75656F11488E88F007C7B89 /* testCorrectionSway1D_iros2011_period.sce */,
+				B75656F21488E88F007C7B89 /* testCorrectionSway1D_sinDoubleCorrector.sce */,
+				B75656F31488E88F007C7B89 /* testCorrectionSwayDoubleIntegrateur.sce */,
+				B75656F41488E88F007C7B89 /* testInt.sce */,
+				B75656F51488E88F007C7B89 /* testIntEstimate.sce */,
+			);
+			path = correctionSway1D;
+			sourceTree = "<group>";
+		};
+		B75656F61488E88F007C7B89 /* makeFig */ = {
+			isa = PBXGroup;
+			children = (
+				B75656F71488E88F007C7B89 /* makeFigCameraFrame.sce */,
+			);
+			path = makeFig;
+			sourceTree = "<group>";
+		};
+		B75656F81488E88F007C7B89 /* predControl */ = {
+			isa = PBXGroup;
+			children = (
+				B7143E04148EB9140006FBAF /* testComparePrediction.sci */,
+				B7A5BEC3149660C50040BBEA /* testOneLoop.sci */,
+				B756576D1488E8B7007C7B89 /* testCostFunction.sci */,
+				B75656F91488E88F007C7B89 /* testPredControl.sci */,
+				B75656FA1488E88F007C7B89 /* testPrediction.sce */,
+				B75656FB1488E88F007C7B89 /* testRectification.sce */,
+			);
+			path = predControl;
+			sourceTree = "<group>";
+		};
+		B75656FC1488E88F007C7B89 /* qp */ = {
+			isa = PBXGroup;
+			children = (
+				B75656FD1488E88F007C7B89 /* testAVJerk.sce */,
+				B75656FE1488E88F007C7B89 /* testQPVisu.sce */,
+				B75656FF1488E88F007C7B89 /* testQPVisuJerkCam.sce */,
+				B75657001488E88F007C7B89 /* testQPVisuJerkCam2.sce */,
+			);
+			path = qp;
+			sourceTree = "<group>";
+		};
+		B75657041488E88F007C7B89 /* transform */ = {
+			isa = PBXGroup;
+			children = (
+				B75657051488E88F007C7B89 /* testLimitcMo.sce */,
+				B75657061488E88F007C7B89 /* testTransformation.sce */,
+			);
+			path = transform;
+			sourceTree = "<group>";
+		};
+		B75657071488E88F007C7B89 /* vs */ = {
+			isa = PBXGroup;
+			children = (
+				B75657081488E88F007C7B89 /* testAsserVisu_base.sce */,
+				B75657091488E88F007C7B89 /* testAsserVisuEpsilon.sce */,
+				B756570A1488E88F007C7B89 /* testAsserVisuEpsilon_bruit.sce */,
+				B756570B1488E88F007C7B89 /* testAsserVisuEpsilon_sans.sce */,
+				B756570C1488E88F007C7B89 /* testAsserVisuFuns.sci */,
+				B756570D1488E88F007C7B89 /* testAsserVisuMain.sce */,
+				B756570E1488E88F007C7B89 /* testAsserVisuTous.sce */,
+				B756570F1488E88F007C7B89 /* testLimitVelocity.sce */,
+			);
+			path = vs;
+			sourceTree = "<group>";
+		};
+		B75657101488E88F007C7B89 /* vsWalk */ = {
+			isa = PBXGroup;
+			children = (
+				B75657111488E88F007C7B89 /* testAsserVisuEpsilon_bruit._GAsce */,
+				B75657121488E88F007C7B89 /* testAsserVisuEpsilon_bruit_GA.sce */,
+				B75657131488E88F007C7B89 /* testAsserVisuEpsilon_SurX.sce */,
+				B75657141488E88F007C7B89 /* testAV3DSwayCorr2Tasks.sci */,
+				B75657151488E88F007C7B89 /* testAV3DSwayCorrection.sci */,
+				B75657161488E88F007C7B89 /* testAVrobotErreur.sce */,
+				B75657171488E88F007C7B89 /* testIROS2010.sce */,
+				B75657181488E88F007C7B89 /* testLinearAsserVisuMarche.sce */,
+				B75657191488E88F007C7B89 /* testPG.sci */,
+				B756571A1488E88F007C7B89 /* testPGCam.sci */,
+				B756571B1488E88F007C7B89 /* testSwayCorrection.sce */,
+				B756571C1488E88F007C7B89 /* testSwayCorrection.sci */,
+				B756571D1488E88F007C7B89 /* testSwayCorrection3ddl.sci */,
+				B756571E1488E88F007C7B89 /* testSwayCorrectionAll.sce */,
+				B756571F1488E88F007C7B89 /* testSwayCorrectionHRP2.sce */,
+				B75657201488E88F007C7B89 /* testSwayCorrectionHRP2.sci */,
+				B75657211488E88F007C7B89 /* testSwaySimuRobot.sci */,
+			);
+			path = vsWalk;
+			sourceTree = "<group>";
+		};
+		B75657231488E88F007C7B89 /* test-unitary */ = {
+			isa = PBXGroup;
+			children = (
+				B75657241488E88F007C7B89 /* testFeatureJerk.sce */,
+				B75657251488E88F007C7B89 /* testPositionCamRobot.sce */,
+				B75657261488E88F007C7B89 /* testProjection.sce */,
+				B75657271488E88F007C7B89 /* testStateJerk.sce */,
+				B75657281488E88F007C7B89 /* unitTestAsserVisu.sce */,
+			);
+			name = "test-unitary";
+			path = "../test-unitary";
+			sourceTree = SOURCE_ROOT;
+		};
+		B75657291488E88F007C7B89 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B756572A1488E88F007C7B89 /* asserVisu */,
+				B75657301488E88F007C7B89 /* asserVisuPred */,
+				B75657391488E88F007C7B89 /* graphisme */,
+				B75657431488E88F007C7B89 /* hrp2 */,
+				B75657461488E88F007C7B89 /* projectionPers */,
+				B756574C1488E88F007C7B89 /* prwControl */,
+				B75657541488E88F007C7B89 /* tools */,
+				B75657561488E88F007C7B89 /* transformation */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = SOURCE_ROOT;
+		};
+		B756572A1488E88F007C7B89 /* asserVisu */ = {
+			isa = PBXGroup;
+			children = (
+				B756572B1488E88F007C7B89 /* asserVisuLoop */,
+				B756572C1488E88F007C7B89 /* asserVisuLoop.sci */,
+				B756572D1488E88F007C7B89 /* commandLaws.sci */,
+				B756572E1488E88F007C7B89 /* interactionMatrix.sci */,
+				B756572F1488E88F007C7B89 /* velocitySaturation.sci */,
+			);
+			path = asserVisu;
+			sourceTree = "<group>";
+		};
+		B75657301488E88F007C7B89 /* asserVisuPred */ = {
+			isa = PBXGroup;
+			children = (
+				B75657311488E88F007C7B89 /* predComputeQPvisu.sci */,
+				B75657321488E88F007C7B89 /* predConfig.sci */,
+				B75657331488E88F007C7B89 /* predConstraintsMire.sci */,
+				B75657341488E88F007C7B89 /* predControl.sci */,
+				B75657351488E88F007C7B89 /* predCostMire.sci */,
+				B75657361488E88F007C7B89 /* predMatrix.sci */,
+				B75657371488E88F007C7B89 /* predPredictionMire.sci */,
+				B75657381488E88F007C7B89 /* predPredictionPoint.sci */,
+			);
+			path = asserVisuPred;
+			sourceTree = "<group>";
+		};
+		B75657391488E88F007C7B89 /* graphisme */ = {
+			isa = PBXGroup;
+			children = (
+				B756573A1488E88F007C7B89 /* AxeZ2DDraw.sci */,
+				B756573B1488E88F007C7B89 /* AxeZ3DDraw.sci */,
+				B756573C1488E88F007C7B89 /* Camera3D.sci */,
+				B756573D1488E88F007C7B89 /* Camera3DDraw.sci */,
+				B756573E1488E88F007C7B89 /* createFigure.sci */,
+				B756573F1488E88F007C7B89 /* Mire3DDraw.sci */,
+				B75657401488E88F007C7B89 /* PlotFeet.sci */,
+				B75657411488E88F007C7B89 /* point2DDraw.sci */,
+				B75657421488E88F007C7B89 /* point3DDraw.sci */,
+			);
+			path = graphisme;
+			sourceTree = "<group>";
+		};
+		B75657431488E88F007C7B89 /* hrp2 */ = {
+			isa = PBXGroup;
+			children = (
+				B75657441488E88F007C7B89 /* convertVelocity.sci */,
+				B75657451488E88F007C7B89 /* loadHRP2camCom.sci */,
+			);
+			path = hrp2;
+			sourceTree = "<group>";
+		};
+		B75657461488E88F007C7B89 /* projectionPers */ = {
+			isa = PBXGroup;
+			children = (
+				B75657471488E88F007C7B89 /* mire4points.sci */,
+				B75657481488E88F007C7B89 /* mire5points.sci */,
+				B75657491488E88F007C7B89 /* mirePoints.sci */,
+				B756574A1488E88F007C7B89 /* projection3dPoint.sci */,
+				B756574B1488E88F007C7B89 /* wMcFromProjMatr.sci */,
+			);
+			path = projectionPers;
+			sourceTree = "<group>";
+		};
+		B756574C1488E88F007C7B89 /* prwControl */ = {
+			isa = PBXGroup;
+			children = (
+				B756574D1488E88F007C7B89 /* ConstraintsAsLinearSystem.sci */,
+				B756574E1488E88F007C7B89 /* LoadMarche.sci */,
+				B756574F1488E88F007C7B89 /* previewOrientations.sci */,
+				B75657501488E88F007C7B89 /* prwControl.sci */,
+				B75657511488E88F007C7B89 /* prwControlInit.sci */,
+				B75657521488E88F007C7B89 /* setSupportState.sci */,
+				B75657531488E88F007C7B89 /* testPGCam.sci */,
+			);
+			path = prwControl;
+			sourceTree = "<group>";
+		};
+		B75657541488E88F007C7B89 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				B75657551488E88F007C7B89 /* matrixTool.sci */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		B75657561488E88F007C7B89 /* transformation */ = {
+			isa = PBXGroup;
+			children = (
+				B75657571488E88F007C7B89 /* changementDeRepere.sci */,
+				B75657581488E88F007C7B89 /* computeMotionCam.sci */,
+				B75657591488E88F007C7B89 /* computeMotionCoM.sci */,
+				B756575A1488E88F007C7B89 /* expMapDirectRxRyRz.sci */,
+				B756575B1488E88F007C7B89 /* expMapDirectThetaU.sci */,
+				B756575C1488E88F007C7B89 /* homogeneousMatrix.sci */,
+				B756575D1488E88F007C7B89 /* homogeneousMatrixFromPose.sci */,
+				B756575E1488E88F007C7B89 /* pFromHomogeneousMatrix.sci */,
+				B756575F1488E88F007C7B89 /* rotationMatrixFromRxRyRz.sci */,
+				B75657601488E88F007C7B89 /* rotationMatrixFromThetaU.sci */,
+				B75657611488E88F007C7B89 /* RxRyRzfromRotationMatrix.sci */,
+				B75657621488E88F007C7B89 /* RxRyRzFromThetaU.sci */,
+				B75657631488E88F007C7B89 /* skew.sci */,
+				B75657641488E88F007C7B89 /* thetaUFromRotationMatrix.sci */,
+				B75657651488E88F007C7B89 /* thetaUFromRxRyRz.sci */,
+				B75657661488E88F007C7B89 /* twistMatrix.sci */,
+				B75657671488E88F007C7B89 /* vRxRyRzFromVThetaU.sci */,
+				B75657681488E88F007C7B89 /* vThetaUFromVRxRyRz.sci */,
+			);
+			path = transformation;
+			sourceTree = "<group>";
+		};
+		B7E94D9B1487E335009868C7 = {
+			isa = PBXGroup;
+			children = (
+				B75656EC1488E88F007C7B89 /* main */,
+				B75657221488E88F007C7B89 /* main.sce */,
+				B75657231488E88F007C7B89 /* test-unitary */,
+				B75657291488E88F007C7B89 /* src */,
+				B75657691488E88F007C7B89 /* LoadMarche.sce */,
+				B756576A1488E88F007C7B89 /* Load.sce */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		B7E94D9D1487E335009868C7 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = B7E94DA01487E335009868C7 /* Build configuration list for PBXProject "AsserVisu" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = B7E94D9B1487E335009868C7;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		B7E94D9E1487E335009868C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		B7E94D9F1487E335009868C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B7E94DA01487E335009868C7 /* Build configuration list for PBXProject "AsserVisu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7E94D9E1487E335009868C7 /* Debug */,
+				B7E94D9F1487E335009868C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B7E94D9D1487E335009868C7 /* Project object */;
+}

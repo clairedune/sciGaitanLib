@@ -1,0 +1,92 @@
+//---------------------------//
+// Compute a cost function over a time horizon 
+// With a free 3d camera
+// December 11
+// Dune 
+//---------------------------//
+function testcost()
+
+//--- Create the camera pose and the object pose  
+posecDesMo_m  = [0 0 0.5 0 0 0 ];                  // pose target/object desired
+posecMo_m     = [0.1 0.1 1 0 0 0 ];								 // pose target/object init  
+posewMo_m     = [0 0 0 0 %pi 0 ];                  // pose of the target in the World Frame
+cDesMo_m      = homogeneousMatrixFromPos(posecDesMo_m);
+cMo_m         = homogeneousMatrixFromPos(posecMo_m);
+wMo_m         = homogeneousMatrixFromPos(posewMo_m); 
+a_m           = 0.20;                              // dimension of the target  
+oP_m          = mire4points(a_m);                  // create the Npbts Points Target
+Nbpts_m       = length(oP_m)/3 ;
+
+//--- compute the init projection on the view
+cP_m          = changeFrameMire(oP_m,cMo_m);
+s_m           = projectMireDirect(cP_m);
+Z_m           = cP_m(3:3:$)  ;
+cDesP_m       = changeFrameMire(oP_m,cDesMo_m);
+sDes_m        = projectMireDirect(cDesP_m);
+ZDes_m        = cDesP_m(3:3:$);      
+
+// ------ Sampling time
+Te_m          = 1/25;                              // to be consistant with the image frame rate
+Te_simu			  = 1/25;
+
+//--- Predictive control parameters
+Np_m          = 1;                                 // horizon lenght
+Nc_m          = 1;                                 // command horizon length  
+v_m           = [0; 0; 0; 0; 0; 0];                // init velocity
+
+thres_m       = 1e-2;                              // error threshold  
+lambda        = 1; 
+
+// ------ Constraints definition
+xu_m          = [  0.22 ;  0.22 ];                 // position max of the a 2D point in the image plane 
+xl_m          = [ -0.22 ; -0.22 ];                 // position min of the a 2D point in the image plane 
+bu_m          = 1e3*0.25*ones(6,1);  // command bounds
+bl_m          = -bu_m;                             // command bounds on the horizon
+
+// ------ LFunction and Q definition
+Lfunction    = matIntMireC;                       // Lc(t) classical visual servo s(t) Z(t)
+//Lfunction    = matIntMireP;                     // Lp(t) classical visual servo s(t) Z*
+//Lfunction    = matIntMireM;                     // Lm(t) mixte (L*+Lc(t))
+//Lfunction    = matIntMireD;                     // Ld    classical interaction matrix desired
+Q_m          = matWeightIdentity(Np_m,Nbpts_m);
+//Q_m          = matWeightIdentityZero(Np_m,Nbpts_m,1);
+//Q_m          = matWeightTV(Np,Nbpts);
+
+//funcost_m    = cld_costLocalMire;
+funcost_m    = ga_costLocalMire;
+
+
+
+disp('Fin de la definition des parametres de l expe');
+pause;
+
+// ----- Global param
+
+U0_m					= [];   // create the first control horizon
+for i = 1:Nc_m
+  U0_m				= [U0_m ; v_m];
+end ;
+
+e0_m = sDes_m-s_m;
+
+// variables locales
+cost = ga_costHorLoc2dMire(s_m,Z_m,Up_m,Te_m,Np_m,Q_m,e0_m,sDes_m);
+disp('le cout vaut');
+disp(cost);
+
+// même chose mais avec les variables globales.
+
+	// -------- Display
+hf2d1_m      = createPlanImage(1,xl_m,xu_m,"Point 2D");
+mire2DDraw(s_m,0.01,3);    
+smvisu_m   =[s_m;smhor_m];
+mireEvolutionDraw(Np_m+1,smvisu_m,1);    
+mire2DDraw(sDes_m,0.01,5);
+show_pixmap();
+disp("sm");
+disp(s_m);
+disp("sDesm");
+disp(sDes_m);
+
+ 
+endfunction
