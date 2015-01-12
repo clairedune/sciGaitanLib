@@ -46,14 +46,14 @@ x1 = sommets1 (2,:);
 
 
 
-//trac de la figure
+//trace de la figure
 xset("window",2);
-xset("pixmap",1);
+//xset("pixmap",1);
 clear_pixmap()//et buffer
 h1=scf(2);
 h1.figure_name = "Sagital plane";
 plot(x,y,'bo-');
-//plot(x1,y1,'r-s');
+///plot(x1,y1,'r-s');
 //displayInertiaCenter(PI)
 //displayCOM2d(COM)
 show_pixmap();

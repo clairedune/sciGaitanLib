@@ -92,10 +92,10 @@ function dhw = H2LWSagSeg()
   
   // les tailles sont tirees de DUMAS 2007 pour un homme
 // hauteur du pied en m
-d0 = 0.2; // longueur du pied gauche
-d8 = 0.2; // longueur du pied droit
-d1 = .1;
-d7 = d1;
+//d0 = 0.2; // longueur du pied gauche
+//d8 = 0.2; // longueur du pied droit
+//d1 = .05;
+//d7 = d1;
 // hauteur du tibias
 d2 = .432;
 d6 = d2;
@@ -106,145 +106,111 @@ d5 = d3;
 d4 = .477;
 // longueur du bras
 d9 = .271;
-d12 = d9;
+d11 = d9;
 // longueur de l'avant bras
 d10 = .283;
-d13 = d10;
+d12 = d10;
 // FIXME : pour l'instant les dimension du deambulateur sont donnees  titre indicatif.
 // largeur deambulateur
-dw = 0.5;
+//dw = 0.5;
 // hauteur deambulateur
-dh = d1+d3+d5+d7-d9-d10;
-dhw = [d0,d1, d2, d3, d4, d5, d6, d7,d8, d9,d10,d12,d13, dw, dh];
+//dh = d1+d3+d5+d7-d9-d10;
+//dhw = [d0,d1, d2, d3, d4, d5, d6, d7,d8, d9,d10,d12,d13, dw, dh];
+dhw = [d2, d3, d4, d5, d6,d9,d10,d11,d12];
+
+
 
 endfunction 
 
 function Points3D = H2LWScomputeMGD(d,q)
 
-d0  = d(1) ;  // longueur du pied D
-d1  = d(2);   // hauteur maleole D
-d2  = d(3);   // tibias D
-d3  = d(4);   // jambe D
-d4  = d(5);   // torse
-d5  = d(6);   // jambre G
-d6  = d(7);   // tibias G  
-d7  = d(8);   // hauteur pied G
-d8  = d(9);   // longueur du pied G
-d9  = d(10);  // bras D
-d10 = d(11);  // avant bras D
-d12 = d(12);  // bras G
-d13 = d(13);  // avant bras G
-dw  = d(14) ; // profondeur du deamb
-dh  = d(15);  // hauteur du deamb
+//d0  = d(1) ;  // longueur du pied G
+//d1  = d(1);   // hauteur maleole G
+d2  = d(1);   // tibias G
+d3  = d(2);   // jambe G
+d4  = d(3);   // torse
+d5  = d(4);   // jambre D
+d6  = d(5);   // tibias D   
+d9  = d(6);  // bras G
+d10 = d(7);  // avant bras G
+d11 = d(8);  // bras D
+d12 = d(9);  // avant bras D
+//dw  = d(14) ; // profondeur du deamb
+//dh  = d(15);  // hauteur du deamb
 
-q1 = q(1);  // plante du pied/sol
-q2 = q(2);  // cheville D
-q3 = q(3);  // genou D
-q4 = q(4);  // hanche D
-q5 = q(5);  // hanche G 
-q6 = q(6);  // genou G
-q7 = q(7);  // cheville G
+//q1 = 0;  // plante du pied G/sol
+q2 = q(1);  // cheville G
+q3 = q(2);  // genou G
+q4 = q(3);  // hanche G
+q5 = q(4);  // hanche D 
+q6 = q(5);  // genou D
+q7 = q(6);  // cheville D
+//q8 = q(8);  // pied D/ sol
+q9 = q(7);  // epaule G
+q10= q(8); // coude G
+//q11= q(); // poignet G
+q11= q(9); // epaule D
+q12= q(10); // coude D
+//q14= q(14); // poignet D
 
-M_0_1   = computeoM1KK(0,0,q1,0); // expression du pied dans
-M_1_2   = computeoM1KK(0,d1,q2,0); // expression du repere 1 dans le repere 0
-M_2_3   = computeoM1KK(0,d2,q3,0); // expression du repere 2 dans le repere 1
-M_3_4   = computeoM1KK(0,d3,q4,0); // expression du repere 3 dans le repere 2
-M_3_5   = computeoM1KK(0,d3,q5-q4+%pi,0); // expression du repere 4 dans le repere 3
-M_5_6   = computeoM1KK(0,d5,-q6,0); // expression du repere 5 dans le repere 4
-M_6_7   = computeoM1KK(0,d6,-q7,0); // expression du repere 6 dans le repere 5
-M_7_8   = computeoM1KK(0,d7,%pi,0); // expression du repere 6 dans le repere 5
 
-M_0_8 = M_0_1*M_1_2*M_2_3*M_3_5*M_5_6*M_6_7*M_7_8;
+//M_0_1   = computeoM1KK(0,0,q1,0); // expression du pied dans le repere lie au sol
+M_0_2   = computeoM1KK(0,0,q2,0); // expression du repere 2  dans le repere 0
+M_2_3   = computeoM1KK(0,d2,q3,0); // expression du repere 3 dans le repere 2
+M_3_4   = computeoM1KK(0,d3,q4,0); // expression du repere 4 dans le repere 3
+M_4_5   = computeoM1KK(0,0,q5,0); // expression du repere 4 dans le repere 3
+M_5_6   = computeoM1KK(0,d5,q6,0); // expression du repere 5 dans le repere 4
+M_6_pD  = computeoM1KK(0,d6,0,0); // expression du repere 6 dans le repere 5
 
 M_4_9   = computeoM1KK(0,d4,q9,0);//epaule
-M_9_10  = computeoM1KK(0,d10,q10,0);//coude
-M_10_11 = computeoM1KK(0,0.2,q11,0);//main
-M_4_12  = computeoM1KK(0,d4,q12,0);//epaule
-M_12_13 = computeoM1KK(0,d13,q13,0);//coude
-M_13_14 = computeoM1KK(0,0.2,q14,0);//main
+M_9_10  = computeoM1KK(0,d9,q10,0);//coude
+M_10_mG = computeoM1KK(0,d10,0,0);//main
 
-
+M_4_11  = computeoM1KK(0,d4,q11,0);//epaule
+M_11_12 = computeoM1KK(0,d11,q12,0);//coude
+M_12_mD = computeoM1KK(0,d12,0,0);//main
 
 // transformation entre le 6e repere et le point B, premier pied du deambulateur.
-B_6 = [0 dh 0 1]';
+//B_6 = [0 dh 0 1]';
 // transformation entre le 6e repere et le point C, second pied du deambulateur.
-C_6 = [dw dh 0 1]';
+//C_6 = [dw dh 0 1]';
 // transformation entre le 6e repere et le point A, coin haut du deambulateur
-A_6 = [dw 0 0 1]';
+//A_6 = [dw 0 0 1]';
 // on exprime le centre de tous les reperes dans le repere R0 et on les dessine
 origin = [0,0,0,1]'; // centre du repere de base sous le pied
 
 /// le pied au sol
-d0 = d(1);
-Pp1_0 = [0, -d0/3 ,  0, 1];
-Pp2_0 = [ d1,   0  , 0, 1];
-Pp3_0 = [0, 2*d0/3,  0, 1];
+//d0 = d(1);
+//Pp1_0 = [0, -d0/3 ,  0, 1];
+//Pp2_0 = [ d1,   0  , 0, 1];
+//Pp3_0 = [0, 2*d0/3,  0, 1];
 
-P1_0  = M_0_1*origin;
-P2_0  = M_0_1*M_1_2*origin;
-P3_0  = M_0_1*M_1_2*M_2_3*origin;
-P4_0  = M_0_1*M_1_2*M_2_3*M_3_4*origin;
-P5_0  = M_0_1*M_1_2*M_2_3*M_3_5*M_5_6*origin;
-P6_0  = M_0_1*M_1_2*M_2_3*M_3_5*M_5_6*M_6_7*origin;
+P2_0  = M_0_2*origin;
+P3_0  = M_0_2*M_2_3*origin;
+P4_0  = M_0_2*M_2_3*M_3_4*origin;
+P5_0  = M_0_2*M_2_3*M_3_4*M_4_5*M_5_6*origin;
+P6_0  = M_0_2*M_2_3*M_3_4*M_4_5*M_5_6*M_6_pD*origin;
 
-
-P7_0  = M_0_8*origin;
-Pp1_8 = M_0_8*Pp1_0';
-Pp2_8 = M_0_8*Pp2_0';
-Pp3_8 = M_0_8*Pp3_0';
+//P7_0  = M_0_8*origin;
+//Pp1_8 = M_0_8*Pp1_0';
+//Pp2_8 = M_0_8*Pp2_0';
+//Pp3_8 = M_0_8*Pp3_0';
 
 //tronc
-P8_0  = M_0_1*M_1_2*M_2_3*M_3_4*M_4_9*origin;
-disp(P8_0);
-
+P8_0  = M_0_2*M_2_3*M_3_4*M_4_9*origin;
+//disp(P8_0);
 //bras G
-P9_0  = M_0_1*M_1_2*M_2_3*M_3_4*M_4_9*M_9_10*origin;//coude
-P10_0  = M_0_1*M_1_2*M_2_3*M_3_4*M_4_9*M_9_10*M_10_11*origin;//poignet
+P9_0  =  M_0_2*M_2_3*M_3_4*M_4_9*M_9_10*origin;//coude
+P10_0 =  M_0_2*M_2_3*M_3_4*M_4_9*M_9_10*M_10_mG*origin;//poignet
 
-P11_0  = M_0_1*M_1_2*M_2_3*M_3_4*M_4_12*origin;
-P12_0  = M_0_1*M_1_2*M_2_3*M_3_4*M_4_12*M_12_13*origin;
-P13_0  = M_0_1*M_1_2*M_2_3*M_3_4*M_4_12*M_12_13*M_13_14*origin;
+P11_0  = M_0_2*M_2_3*M_3_4*M_4_11*M_11_12*origin;
+P12_0  = M_0_2*M_2_3*M_3_4*M_4_11*M_11_12*M_12_mD*origin;
 
-Points3D   = [P1_0,...
-              P2_0, P3_0, P4_0,...
-              P5_0, P6_0,P7_0,P8_0,P9_0,P10_0, P11_0, P12_0, P13_0,...
-              Pp1_0',Pp2_0', Pp3_0',Pp1_8,Pp2_8,Pp3_8];   
+Points3D   = [P2_0, P3_0, P4_0,...
+              P5_0, P6_0, P8_0,P9_0,P10_0, P11_0, P12_0];   
 endfunction
 
-// on reorganise les points pour les afficher avec un plot
-function Points3D =organiseForDisplay(P)
 
-P1_0 = P(:,1);
-P2_0 = P(:,2);
-P3_0 = P(:,3);
-P4_0 = P(:,4);
-P5_0 = P(:,5);
-P6_0 = P(:,6);
-P7_0 = P(:,7);
-P8_0 = P(:,8);
-P9_0 = P(:,9);
-P10_0 = P(:,10);
-P11_0 = P(:,11);
-P12_0 = P(:,12);
-P13_0 = P(:,13);
-Pp1_0 = P(:,14);
-Pp2_0 = P(:,15);
-Pp3_0 = P(:,16);
-Pp1_8 = P(:,17);
-Pp2_8 = P(:,18);
-Pp3_8 = P(:,19);
-
-Points3D   = [Pp3_0,Pp1_0,Pp2_0, Pp3_0,... //pied
-              P2_0, P3_0, P4_0, ...//jambe
-              P5_0, P6_0,... // jambe
-              Pp1_8,Pp3_8,Pp2_8, ...  //pied
-              P6_0,P5_0,P4_0, P8_0, ...//tronc
-              P9_0, P10_0,P9_0,P8_0,... //bras
-              P11_0, P12_0, P13_0// bras
-              ];   
-
-  
-endfunction
 
 
 
