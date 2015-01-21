@@ -36,7 +36,7 @@ loadmatfile(pathMatFile);
           
 
 
-index=10;
+index=100;
 //jeu de données de test
 global Ptest ;
 Ptest = [       P2x(index),P2y(index),P2z(index),1000;
@@ -64,20 +64,6 @@ show_pixmap();
 
 // le robot est un robot plan sur xy
 // simuInit 
-//q1  = 0 ;           // angle plante du pied/sol G
-//q2  = 10*%pi/180 ;  // cheville G
-//q3  = -40*%pi/180 ; // genou G
-//q4  = 40*%pi/180;   // hanche gauche 
-//q5  = 42*%pi/180 ;  // hanche droite
-//q6  = -40*%pi/180;   // genou D
-//q7  = 10*%pi/180 ;  // cheville D
-//q8  = 0;            // pied D
-//q9  = 110*%pi/180 ; // epaule gauche
-//q10 = -30*%pi/180 ; // coude G
-//q11 = -%pi/2 ;      // poignet G
-//q12 = 130*%pi/180;  // epaule droite
-//q13 = -20*%pi/180;  // coude droit
-//q14 = -%pi/2 ;      // poignet D
 
 //q1  = 0 ;           // angle plante du pied/sol G
 q2  = 0.72546 ;  // cheville G
@@ -92,7 +78,7 @@ q10 = -0.8 ; // coude G
 //q11 = -1.89 ;      // poignet G
 q12 = 3;  // epaule droite
 q13 = -0.4;  // coude droit
-//q14 = 0.6577 ;      // poignet D
+////q14 = 0.6577 ;      // poignet D
 
 
 // nouveau modele
@@ -104,8 +90,8 @@ d0(5)=d0(1);
 d0(2)=d0(2)+0.1;
 d0(4)=d0(2);
 d0(3)=d0(3)+0.15;
-tx0 = 0.0864232;//;Ptest(2,6); // position du pied dans le plan sagital 
-tz0 = -0.0976375 ;//Ptest(3,6); // elevation du pied au sol 
+tx0 = 0;//.0864232;//;Ptest(2,6); // position du pied dans le plan sagital 
+tz0 = 0;//-0.0976375 ;//Ptest(3,6); // elevation du pied au sol 
 x0  = [d0,q0,tx0,tz0]; 
 P2  = computePest(x0);// le robot est un robot plan sur xy
 
@@ -114,6 +100,9 @@ P2  = computePest(x0);// le robot est un robot plan sur xy
 //plotHuman14dof(P2)
  plotHuman10dots(P2);
 show_pixmap();
+
+
+
 
 disp('Pause avant optimisation')
 pause

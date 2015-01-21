@@ -5,6 +5,8 @@
 // On ajoute un PI pour vrifier que la pose est telle que les pieds touche
 
 // read qualysis data
+
+disp('chargement du fichier de données');
 path = '/home/dune/Documents/data/AnalysisQualisys/MADN/';
 pathres = 'results/essai1-';
 
@@ -16,15 +18,28 @@ loadmatfile(pathMatFile);
 // plusieurs pas de temps, les donnees sont en colonnes x,y,z
 // et ordonnées telles que dans la construction du modele
 //--------------------------------------------------------------//
-index = 200;
-P = mocap10dofData(essai1);
-global Ptest2 ;
-Ptest = P(:,index);
-Ptest = Ptest'/1000; //tout mettre en metre
 
+disp('construction des points 3D issus des données mocap');
+P = mocap10dofData(essai1);
+global Ptest ;
+
+Ptest = []
+for index = 1000:1:1000
+  Pi = P(:,index);
+  Pi = Pi'/1000; //tout mettre en metre
+  Ptest=[Ptest,Pi];
+end
+
+
+disp('affichage des données de test mocap')
 // affichage
+
+//humanMocap10dofPlot(Ptest);
+xset("window",9);
+humanMocapSet10dofPlot(Ptest);
 xset("window",10);
-humanMocap10dofPlot(Ptest);
+//humanMocap10dofPlot(Ptest);
+humanMocapSet10dofPlot(Ptest);
 show_pixmap();
 
 
@@ -32,7 +47,7 @@ show_pixmap();
 // le robot est un robot plan sur xy
 // on construit une premiere position arbitrairement
 //------------------------------------------------------------------//
-
+disp('construction du modele du corps humain');
 //q1  = 0 ;      // angle plante du pied/sol G
 q2  = 0.72546 ;  // cheville G
 q3  = -0.7 ;     // genou G
@@ -62,21 +77,26 @@ d0(4)=d0(2);
 d0(3)=d0(3)+0.15;
 
 // position de la base du modele dans le repere du monde
-tx0 = 0.0864232;//;Ptest(2,6); // position du pied dans le plan sagital 
-tz0 = -0.0976375 ;//Ptest(3,6); // elevation du pied au sol 
-x0  = [d0,q0,tx0,tz0]; 
+tz0 = 0.0864232;//;Ptest(2,6); // position du pied dans le plan sagital 
+tx0 = -0.0976375 ;//Ptest(3,6); // elevation du pied au sol 
 
+x0  = [d0];
+
+N = length(Ptest)/30;
+
+for i=1:N
+    x0 = [x0,q0,tz0,tx0];
+end
+x0  = x0';
 // on construit le modele
-P  = computePestCol(x0);// le robot est un robot plan sur xy
+//Pmodel = computePestCol(x0);// le robot est un robot plan sur xy
 
-// on affiche le modele
-humanModel10dofPlot(P);
+Pmodel = computePset(x0);
 
-//-------------------------------------------------------------//
-// Calcule de l'erreur 
-//------------------------------------------------------------//
-e2=computeErrorCol(P, Ptest);
-disp(e2);
+disp('affichage du modele')
+// on affiche le model
+//humanModel10dofPlot(Pmodel);
+humanSet10dofPlot(Pmodel);
 
 
 
@@ -88,6 +108,20 @@ pause
 //simplex nelder&mead
 //x = fminsearch ( costfunction , x0 );
 //moindre carre
-[fopt,x]=leastsq(costfunctionCol, x0);
-Pest = computePestCol(x);
-humanModel10dofPlot(Pest);
+[fopt,x]=leastsq(costfunctionSet, x0);
+Pestime= computePset(x);
+//humanModel10dofPlot(Pestime);
+humanSet10dofPlot(Pestime);
+
+xset("window",11);
+humanSet10dofPlot(Pestime);
+
+//for i=1:10
+//    n = 20+i;
+//    xset("window",n)
+//    plot(Pestime(10+i-1:30:$),'r--');
+//    plot(Ptest(10+i-1:30:$),'r');
+//    plot(Pestime(11+i:30:$),'b--');
+//    plot(Ptest(11+i:30:$),'b');
+//show_pixmap();
+end
